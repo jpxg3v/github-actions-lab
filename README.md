@@ -1,4 +1,4 @@
-# GitHub Actions Lab 🚀 ![CI Status](https://github.com/YOUR_USERNAME/YOUR_REPO/actions/workflows/hello-devops.yml/badge.svg)
+# GitHub Actions Lab 🚀 [![Hello GitHub Actions](https://github.com/jpxg3v/github-actions-lab/actions/workflows/hello-devops.yml/badge.svg)](https://github.com/jpxg3v/github-actions-lab/actions/workflows/hello-devops.yml)
 
 This repo serves as a foundational demo of **CI/CD** using GitHub Actions, focusing on automation, security, and environment visibility.
 
