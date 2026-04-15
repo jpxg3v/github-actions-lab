@@ -1,0 +1,44 @@
+name: Hello GitHub Actions
+
+# Controls when the workflow will run
+on:
+  push:
+    branches: [ "main" ] # Runs when you push to main
+  pull_request:
+    branches: [ "main" ] # Runs when you open a PR
+  workflow_dispatch:      # Allows you to run this manually from the UI
+
+jobs:
+  # The first job: Demonstration of environment setup
+  initial-greeting:
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Get a copy of your code onto the runner
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      # Step 2: Print a custom message
+      - name: Run Greeting
+        run: |
+          echo "🚀 Starting DevOps Portfolio Workflow"
+          echo "Hello from GitHub Actions!"
+
+      # Step 3: Linux knowledge
+      - name: Log Runner Details
+        run: |
+          echo "Checking runner system information..."
+          lsb_release -a
+          echo "Current Path: $(pwd)"
+          echo "Today's Date: $(date)"
+
+  # The second job: Simulation of a build/test
+  verify-files:
+    needs: initial-greeting # This job only starts if the first one finishes
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: List Repository Files
+        run: |
+          echo "Listing files in the repo to verify structure:"
+          ls -R
