@@ -38,6 +38,10 @@ jobs:
     runs-on: ubuntu-latest
     
     steps:
+      # Step 1: Get a copy of your code onto the runner
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
       - name: List Repository Files
         run: |
           echo "Listing files in the repo to verify structure:"
