@@ -63,3 +63,19 @@ jobs:
         run: |
           echo "Testing secret masking..."
           echo "The secret value is: $MY_SECRET"
+
+  system-metadata:
+    needs: initial-greeting # This job only starts if the first one finishes
+    runs-on: ubuntu-latest
+    
+    steps:
+      - name: Show GitHub Context
+        env:
+          # We are pulling data directly from GitHub's internal variables
+          USER_NAME: ${{ github.actor }}
+          REPO_NAME: ${{ github.repository }}
+          EVENT_TYPE: ${{ github.event_name }}
+        run: |
+          echo "Automation triggered by: $USER_NAME"
+          echo "Working in repository: $REPO_NAME"
+          echo "Event that started this: $EVENT_TYPE"
