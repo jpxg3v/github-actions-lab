@@ -45,4 +45,4 @@ jobs:
       - name: List Repository Files
         run: |
           echo "Listing files in the repo to verify structure:"
-          ls -R
+          ls -R -a
