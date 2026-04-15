@@ -1,3 +1,5 @@
+[![Hello GitHub Actions](https://github.com/jpxg3v/github-actions-lab/actions/workflows/hello-devops.yml/badge.svg)](https://github.com/jpxg3v/github-actions-lab/actions/workflows/hello-devops.yml)
+
 # GitHub Actions Lab 🚀
 
 This repo serves as a foundational demo of **CI/CD** using GitHub Actions.
