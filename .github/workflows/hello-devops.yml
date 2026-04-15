@@ -46,3 +46,20 @@ jobs:
         run: |
           echo "Listing files in the repo to verify structure:"
           ls -R -a
+
+  # The third job: Testing secret masking
+  test-secrets:
+    needs: initial-greeting # This job only starts if the first one finishes
+    runs-on: ubuntu-latest
+    
+    steps:
+      # Step 1: Get a copy of your code onto the runner
+      - name: Checkout Repository
+        uses: actions/checkout@v4
+
+      - name: Test Secret Masking
+        env:
+          MY_SECRET: ${{ secrets.MY_DUMMY_API_KEY }}
+        run: |
+          echo "Testing secret masking..."
+          echo "The secret value is: $MY_SECRET"
